@@ -18,6 +18,14 @@ Include above files in `<head></head>` section of your html page
 
 
 
+## Create .js file and set _Dropzone.autoDiscover to _false_
+```
+//Add below line at the top of your JavaScript code
+Dropzone.autoDiscover = false;
+//This will prevent Dropzone to instantiate on it's own unless you are using dropzone class for styling
+```
+
+
 ## Configure your angular app
 Include `thatisuday.dropzone` module inside your angular app.
 ```

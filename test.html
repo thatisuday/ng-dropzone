@@ -18,14 +18,16 @@
 		
 		<style>
 			.dropzone{
-				width:500px;
+				width:700px;
 				min-height:250px;
 				font-family:sans-serif;
+				margin: 10px auto;
 			}
 		</style>
 	</head>
 	<body ng-controller="main">
-		<div class="dropzone" options="dzOptions" callbacks="dzCallbacks" ng-dropzone></div>
+		<div id="dropzone1" class="dropzone" options="dzOptions" callbacks="dzCallbacks" ng-dropzone></div>
+		<div id="dropzone2" class="dropzone sm" options="dzOptions" callbacks="dzCallbacks" ng-dropzone></div>
 		
 		<script>
 		Dropzone.autoDiscover = false;

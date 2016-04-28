@@ -1,8 +1,12 @@
 /*
- *	Beautify Dropzone
- *  Remove huge border radius, odd colors
- *  Remove unnecessary preview elements like size, name etc.
- *  Use .md, .sm, .xs classes with .dropzone class for smaller thumbnail previews
+ * Beautify Dropzone
+ *
+ * @author Uday Hiwarale <uhiwarale@gmail.com>
+ * https://www.github.com/thatisuday/ngDropzone
+ *
+ * Remove huge border radius, odd colors
+ * Remove unnecessary preview elements like size, name etc.
+ * Use .md, .sm, .xs classes with .dropzone class for smaller thumbnail previews
 **/
 
 .dropzone{
@@ -10,6 +14,7 @@
 	padding:5px;
 	cursor:pointer;
 	border:1px solid #eee;
+	font-family:sans-serif;
 }
 
 /* Drop message */

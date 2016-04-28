@@ -13,20 +13,27 @@
 		
 		<!-- ngDropzone -->
 		<script src="https://rawgit.com/thatisuday/ngDropzone/master/ngDropzone.js"></script>
-		<link rel="stylesheet" href="https://rawgit.com/thatisuday/ngDropzone/master/ngDzBeautify.css">
 		
+		<!-- Misc -->
+		<link rel="stylesheet" href="https://rawgit.com/thatisuday/ngDropzone/master/ngDzBeautify.css">
+		<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
 		
 		<style>
+			body{
+				font-family:'Roboto', sans-serif !important;
+			}
 			.dropzone{
 				width:700px;
 				min-height:250px;
-				font-family:sans-serif;
 				margin: 10px auto;
 			}
 		</style>
 	</head>
 	<body ng-controller="main">
+		<p style="text-align:center;">Simple dropzone using beautify.css</p>
 		<div id="dropzone1" class="dropzone" options="dzOptions" callbacks="dzCallbacks" ng-dropzone></div>
+		
+		<p style="text-align:center;">Added <b>sm</b> class with dropzone. Check source code.</p>
 		<div id="dropzone2" class="dropzone sm" options="dzOptions" callbacks="dzCallbacks" ng-dropzone></div>
 		
 		<script>

@@ -32,7 +32,7 @@ Include `thatisuday.dropzone` module inside your angular app.
 var myNgApp = angular.module('myAppName', ['thatisuday.dropzone']);
 ```
 
-> You can configure dropzone before a app starts running. ngDropzone comes with built in **dropzoneOps** provider to configure [dropzone options](http://www.dropzonejs.com/#configuration-options) which can be implemented as below. _setOptions_ function will set default options fot all your dropzone instances in that app.
+> You can configure dropzone before an app starts running. ngDropzone comes with built in **dropzoneOps** provider to configure [dropzone options](http://www.dropzonejs.com/#configuration-options) which can be implemented as below. _setOptions_ function will set default options fot all your dropzone instances in that app.
 
 ```
 myNgApp.config(function(dropzoneOpsProvider){

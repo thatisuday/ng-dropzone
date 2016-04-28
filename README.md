@@ -91,6 +91,8 @@ myNgApp.controller('main', function($scope){
 });
 ```
 
+>Take a look at **test.html** source code for better understanding of working with different controllers and options overriding.
+
 
 
 # Beautify Dropzone

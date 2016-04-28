@@ -1,9 +1,5 @@
-# ngDropzone
+# ngDropzone ☞ : [Preview](https://htmlpreview.github.io/?https://github.com/thatisuday/ngDropzone/blob/master/test.html)
 AngularJS directive for __[dropzone](https://github.com/enyo/dropzone)__
-
-
-
-## [Fall in ❤ first](https://htmlpreview.github.io/?https://github.com/thatisuday/ngDropzone/blob/master/test.html)
 
 
 

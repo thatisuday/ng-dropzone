@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html ng-app="myNgApp">
+	<head>
+		<meta charset="utf-8">
+		<title>ngDropzone simple example</title>
+		
+		<!-- AngularJS -->
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+		
+		<!-- Dropzone -->
+		<script src="https://rawgit.com/enyo/dropzone/master/dist/dropzone.js"></script>
+		<link rel="stylesheet" href="https://rawgit.com/enyo/dropzone/master/dist/dropzone.css">
+		
+		<!-- ngDropzone -->
+		<script src="https://rawgit.com/thatisuday/ngDropzone/master/ngDropzone.js"></script>
+		<link rel="stylesheet" href="https://rawgit.com/thatisuday/ngDropzone/master/ngDzBeautify.css">
+		
+		
+		<style>
+			.dropzone{
+				width:500px;
+				min-height:250px;
+				font-family:sans-serif;
+			}
+		</style>
+	</head>
+	<body ng-controller="main">
+		<div class="dropzone" options="dzOptions" callbacks="dzCallbacks" ng-dropzone></div>
+		
+		<script>
+		Dropzone.autoDiscover = false;
+		var myNgApp = angular.module('myNgApp', ['thatisuday.dropzone']);
+		
+		myNgApp.config(function(dropzoneOpsProvider){
+			dropzoneOpsProvider.setOptions({
+				url : '/upload.php'
+			});
+		});
+		
+		myNgApp.controller('main', function($scope, $timeout){
+			$scope.dzOptions = {
+				paramName : 'photo',
+				maxFilesize : '10',
+				acceptedFiles : 'image/jpeg, images/jpg, image/png',
+				addRemoveLinks : true,
+				dictDefaultMessage : 'Click to add or drop photos',
+				dictRemoveFile : 'Remove photo',
+				dictResponseError : 'Could not upload this photo'
+			};
+			
+			$scope.dzCallbacks = {
+				'success' : function(file, xhr){
+					console.log(file, xhr);
+				}
+			};
+		});
+		</script>
+	</body>
+</html>

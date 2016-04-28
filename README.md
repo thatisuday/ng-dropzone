@@ -5,6 +5,14 @@ AngularJS directive for __[dropzone](https://github.com/enyo/dropzone)__
 
 ## Getting started
 
+### Install using bower
+Run following command in your working directory using bash shell
+```
+bower install ngDropzone
+```
+_Latest stable version is **v0.0.2**_
+
+
 ### Install manually
 ##### Step 1
 You must have AngularJS library included for this directive to work : [Download from Google CDN](https://developers.google.com/speed/libraries/#angularjs)
@@ -18,7 +26,7 @@ Download `ngDropzone.js` from this repository in `/dist` folder
 ##### Step 4
 Include above files in `<head></head>` section of your html page
 
-
+----------
 
 ## Create .js file and set _Dropzone.autoDiscover_ to _false_
 ```

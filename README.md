@@ -8,10 +8,10 @@ AngularJS directive for __[dropzone](https://github.com/enyo/dropzone)__
 You must have AngularJS library included for this directive to work : [Download from Google CDN](https://developers.google.com/speed/libraries/#angularjs)
 
 ##### Step 2
-You need to download dropzone.js and dropzone.css files from dropzone repository : [Get from offical release](https://github.com/enyo/dropzone/releases/tag/v4.3.0)
+You need to download `dropzone.js` and `dropzone.css` files from dropzone repository : [Get from official release](https://github.com/enyo/dropzone/releases/tag/v4.3.0)
 
 ##### Step 3
-Download ngDropzone.js from this repository
+Download `ngDropzone.js` from this repository in `/dist` folder
 
 ##### Step 4
 Include above files in `<head></head>` section of your html page

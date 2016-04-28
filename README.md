@@ -18,7 +18,7 @@ Include above files in `<head></head>` section of your html page
 
 
 
-## Create .js file and set _Dropzone.autoDiscover to _false_
+## Create .js file and set _Dropzone.autoDiscover_ to _false_
 ```
 //Add below line at the top of your JavaScript code
 Dropzone.autoDiscover = false;

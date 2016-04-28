@@ -4,6 +4,8 @@ AngularJS directive for __[dropzone](https://github.com/enyo/dropzone)__
 
 
 ## Getting started
+
+### Install manually
 ##### Step 1
 You must have AngularJS library included for this directive to work : [Download from Google CDN](https://developers.google.com/speed/libraries/#angularjs)
 

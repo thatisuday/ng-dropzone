@@ -7,6 +7,9 @@
  * Remove huge border radius, odd colors
  * Remove unnecessary preview elements like size, name etc.
  * Use .md, .sm, .xs classes with .dropzone class for smaller thumbnail previews
+ * * * * * * * * * * * * * * *
+ * Make sure you set font family property in body else add below style to your dropzones
+ * font-family:sans-serif;
 **/
 
 .dropzone{

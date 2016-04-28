@@ -3,6 +3,10 @@ AngularJS directive for __[dropzone](https://github.com/enyo/dropzone)__
 
 
 
+## [Fall in ❤ first](https://htmlpreview.github.io/?https://github.com/thatisuday/ngDropzone/blob/master/test.html)
+
+
+
 ## Getting started
 ##### Step 1
 You must have AngularJS library included for this directive to work : [Download from Google CDN](https://developers.google.com/speed/libraries/#angularjs)

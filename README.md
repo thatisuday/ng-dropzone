@@ -93,5 +93,10 @@ myNgApp.controller('main', function($scope){
 
 
 
+# Beautify Dropzone
+Add `beautify.css` file below dropzone.css file for professional looking dropzone.
+
+
+
 # Complaints & Contribute
 Create an issue and mention your commits there. Don't take a fork.

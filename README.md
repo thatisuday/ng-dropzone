@@ -13,6 +13,14 @@ bower install ngDropzone
 _Latest stable version is **v0.0.2**_
 
 
+### Install using npm
+Run following command in your working directory using bash shell
+```
+npm install ngdropzone
+```
+_Latest stable version is **v0.0.2**_
+
+
 ### Install manually
 ##### Step 1
 You must have AngularJS library included for this directive to work : [Download from Google CDN](https://developers.google.com/speed/libraries/#angularjs)

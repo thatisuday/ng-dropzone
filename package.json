@@ -1,6 +1,6 @@
 {
   "name": "ngdropzone",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "AngularJS directive for Dropzone, an easy to use drag'n'drop file upload library. http://www.dropzonejs.com",
   "main": "dist/ngDropzone.js",
   "directories": {

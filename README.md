@@ -60,6 +60,7 @@ myNgApp.config(function(dropzoneOpsProvider){
 });
 ```
 
+>You can also add default options in **dropzoneOps** provider `(ngDropzone.js)` inside `defOps` object. This is very helpful in case you have multiple apps.  **_But it is not recommended because if you upgrade this directive in future, your app might not behave the way it should._**
 
 
 ## Create dropzone(s)

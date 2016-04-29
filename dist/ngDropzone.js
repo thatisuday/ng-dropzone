@@ -3,7 +3,8 @@
  * @author Uday Hiwarale <uhiwarale@gmail.com>
  * https://www.github.com/thatisuday/ngDropzone
  */
-/* global dropzone */
+ 
+ 
 (function(){
     'use strict';
 

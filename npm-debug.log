@@ -1,0 +1,112 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'publish' ]
+2 info using npm@2.15.1
+3 info using node@v4.4.3
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec Result {
+7 silly cache add   raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: 'C:\\var\\ngDropzone',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory C:\Users\FrameInn\AppData\Roaming\npm-cache\ngdropzone\0.0.2\package.tgz not in flight; packing
+9 verbose correctMkdir C:\Users\FrameInn\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+10 verbose tar pack [ 'C:\\Users\\FrameInn\\AppData\\Roaming\\npm-cache\\ngdropzone\\0.0.2\\package.tgz',
+10 verbose tar pack   'C:\\var\\ngDropzone' ]
+11 verbose tarball C:\Users\FrameInn\AppData\Roaming\npm-cache\ngdropzone\0.0.2\package.tgz
+12 verbose folder C:\var\ngDropzone
+13 info prepublish ngdropzone@0.0.2
+14 verbose addLocalTarball adding from inside cache C:\Users\FrameInn\AppData\Roaming\npm-cache\ngdropzone\0.0.2\package.tgz
+15 verbose correctMkdir C:\Users\FrameInn\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+16 silly cache afterAdd ngdropzone@0.0.2
+17 verbose afterAdd C:\Users\FrameInn\AppData\Roaming\npm-cache\ngdropzone\0.0.2\package\package.json not in flight; writing
+18 verbose correctMkdir C:\Users\FrameInn\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+19 verbose afterAdd C:\Users\FrameInn\AppData\Roaming\npm-cache\ngdropzone\0.0.2\package\package.json written
+20 silly publish { name: 'ngdropzone',
+20 silly publish   version: '0.0.2',
+20 silly publish   description: 'AngularJS directive for Dropzone, an easy to use drag\'n\'drop file upload library. http://www.dropzonejs.com',
+20 silly publish   main: 'dist/ngDropzone.js',
+20 silly publish   directories: { test: 'test' },
+20 silly publish   dependencies: { angular: '^1.4.9', dropzone: '^4.3.0' },
+20 silly publish   devDependencies: {},
+20 silly publish   scripts: { test: 'echo "Error: no test specified" && exit 1' },
+20 silly publish   repository:
+20 silly publish    { type: 'git',
+20 silly publish      url: 'git+https://github.com/thatisuday/ngDropzone.git' },
+20 silly publish   keywords: [ 'dropzone', 'ngDropzone', 'ngdropzone' ],
+20 silly publish   author:
+20 silly publish    { name: 'Uday Hiwarale',
+20 silly publish      email: 'uhiwarale@gmail.com',
+20 silly publish      url: 'https://github.com/thatisuday' },
+20 silly publish   license: 'ISC',
+20 silly publish   bugs: { url: 'https://github.com/thatisuday/ngDropzone/issues' },
+20 silly publish   homepage: 'https://github.com/thatisuday/ngDropzone#readme',
+20 silly publish   readme: '# ngDropzone ☛ : [Preview](https://htmlpreview.github.io/?https://github.com/thatisuday/ngDropzone/blob/master/test/test.html)\r\nAngularJS directive for __[dropzone](https://github.com/enyo/dropzone)__\r\n\r\n\r\n\r\n## Getting started\r\n\r\n### Install using bower\r\nRun following command in your working directory using bash shell\r\n```\r\nbower install ngDropzone\r\n```\r\n\r\n\r\n### Install using npm\r\nRun following command in your working directory using bash shell\r\n```\r\nnpm install ngdropzone\r\n```\r\n\r\n\r\n### Install manually\r\n##### Step 1\r\nYou must have AngularJS library included for this directive to work : [Download from Google CDN](https://developers.google.com/speed/libraries/#angularjs)\r\n\r\n##### Step 2\r\nYou need to download `dropzone.js` and `dropzone.css` files from dropzone repository : [Get from official release](https://github.com/enyo/dropzone/releases/tag/v4.3.0)\r\n\r\n##### Step 3\r\nDownload `ngDropzone.js` from this [official release](https://github.com/thatisuday/ngDropzone/releases)\r\n\r\n##### Step 4\r\nInclude above files in `<head></head>` section of your html page\r\n\r\n----------\r\n\r\n## Create .js file and set _Dropzone.autoDiscover_ to _false_\r\n```\r\n//Add below line at the top of your JavaScript code\r\nDropzone.autoDiscover = false;\r\n//This will prevent Dropzone to instantiate on it\'s own unless you are using dropzone class for styling\r\n```\r\n\r\n\r\n## Configure your angular app\r\nInclude `thatisuday.dropzone` module inside your angular app.\r\n```\r\nvar myNgApp = angular.module(\'myAppName\', [\'thatisuday.dropzone\']);\r\n```\r\n\r\n> You can configure dropzone before an app starts running. ngDropzone comes with built in **dropzoneOps** provider to configure [dropzone options](http://www.dropzonejs.com/#configuration-options) which can be implemented as below. _setOptions_ function will set default options fot all your dropzone instances in that app.\r\n\r\n```\r\nmyNgApp.config(function(dropzoneOpsProvider){\r\n\tdropzoneOpsProvider.setOptions({\r\n\t\turl : \'/upload_url\',\r\n\t\tmaxFilesize : \'10\',\r\n\t\t...\r\n\t});\r\n});\r\n```\r\n\r\n\r\n\r\n## Create dropzone(s)\r\nYou can create dropzone using `ng-dropzone` attribute or `<ng-dropzone></ng-dropzone>` element.\r\n```\r\n<div class="dropzone" options="dzOptions" callbacks="dzCallbacks" ng-dropzone></div>\r\n```\r\n**_OR_**\r\n```\r\n<ng-dropzone class="dropzone" options="dzOptions" callbacks="dzCallbacks"></ng-dropzone>\r\n```\r\n> **options** attribute specifies model that will set [dropzone options](http://www.dropzonejs.com/#configuration-options) for dropzone and will override any options that may have been provided with **dropzoneOps** provider.\r\n\r\n> **callbacks** attribute specifies model that will handle [dropzone events](http://www.dropzonejs.com/#events) for dropzone.\r\n\r\nAs per above example, **_dzOptions_** is model that set options for dropzone while **_dzCallbacks_** is model that handles events for dropzone.\r\n\r\n\r\n\r\n## Configure dropzone(s)\r\n**callbacks** are not necessary for your dropzone to work, these are just events that you may need as a callback for certain activities of your dropzone. But **options** must be given inside your controller _unless you are configuring it from **dropzoneOps** provider_. _url_ field in dropzone options is mandatory.\r\n\r\n```\r\nmyNgApp.controller(\'main\', function($scope){\r\n\t//Set options for dropzone\r\n\t//Visit http://www.dropzonejs.com/#configuration-options for more options\r\n\t$scope.dzOptions = {\r\n\t\turl : \'/alt_upload_url\',\r\n\t\tparamName : \'photo\',\r\n\t\tmaxFilesize : \'10\',\r\n\t\tacceptedFiles : \'image/jpeg, images/jpg, image/png\',\r\n\t\taddRemoveLinks : true,\r\n\t\t...\r\n\t};\r\n\t\r\n\t\r\n\t//Handle events for dropzone\r\n\t//Visit http://www.dropzonejs.com/#events for more events\r\n\t$scope.dzCallbacks = {\r\n\t\t\'success\' : function(file, xhr){\r\n\t\t\tconsole.log(file, xhr);\r\n\t\t},\r\n\t\t...\r\n\t};\r\n});\r\n```\r\n\r\n>Take a look at **test.html** source code for better understanding of working with different controllers and options overriding.\r\n\r\n\r\n\r\n# Beautify Dropzone\r\nAdd `beautify.css` file below dropzone.css file for professional looking dropzone.\r\n\r\n\r\n\r\n# Complaints & Contribute\r\nCreate an issue and mention your commits there. Don\'t take a fork.\r\n',
+20 silly publish   readmeFilename: 'README.md',
+20 silly publish   gitHead: '3926f0d6dae2be85154c902af6aa160ff8e4a91d',
+20 silly publish   _id: 'ngdropzone@0.0.2',
+20 silly publish   _shasum: '84a62b642f405184eeac5e47f563143db3183bdc',
+20 silly publish   _from: '.' }
+21 verbose getPublishConfig undefined
+22 silly mapToRegistry name ngdropzone
+23 silly mapToRegistry using default registry
+24 silly mapToRegistry registry https://registry.npmjs.org/
+25 silly mapToRegistry data Result {
+25 silly mapToRegistry   raw: 'ngdropzone',
+25 silly mapToRegistry   scope: null,
+25 silly mapToRegistry   name: 'ngdropzone',
+25 silly mapToRegistry   rawSpec: '',
+25 silly mapToRegistry   spec: 'latest',
+25 silly mapToRegistry   type: 'tag' }
+26 silly mapToRegistry uri https://registry.npmjs.org/ngdropzone
+27 verbose publish registryBase https://registry.npmjs.org/
+28 silly publish uploading C:\Users\FrameInn\AppData\Roaming\npm-cache\ngdropzone\0.0.2\package.tgz
+29 verbose request uri https://registry.npmjs.org/ngdropzone
+30 verbose request sending authorization for write operation
+31 info attempt registry request try #1 at 6:19:25 AM
+32 verbose request using bearer token for auth
+33 verbose request id c1e462a9479df580
+34 http request PUT https://registry.npmjs.org/ngdropzone
+35 http 403 https://registry.npmjs.org/ngdropzone
+36 verbose headers { 'content-type': 'application/json',
+36 verbose headers   'cache-control': 'max-age=300',
+36 verbose headers   'content-length': '95',
+36 verbose headers   'accept-ranges': 'bytes',
+36 verbose headers   date: 'Fri, 29 Apr 2016 00:49:45 GMT',
+36 verbose headers   via: '1.1 varnish',
+36 verbose headers   connection: 'keep-alive',
+36 verbose headers   'x-served-by': 'cache-sin6921-SIN',
+36 verbose headers   'x-cache': 'MISS',
+36 verbose headers   'x-cache-hits': '0',
+36 verbose headers   'x-timer': 'S1461890961.081395,VS0,VE24321',
+36 verbose headers   vary: 'Accept-Encoding' }
+37 verbose request invalidating C:\Users\FrameInn\AppData\Roaming\npm-cache\registry.npmjs.org\ngdropzone on PUT
+38 error publish Failed PUT 403
+39 verbose stack Error: "You cannot publish over the previously published version 0.0.2." : ngdropzone
+39 verbose stack     at makeError (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:264:12)
+39 verbose stack     at CachingRegistryClient.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:252:14)
+39 verbose stack     at Request._callback (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:172:14)
+39 verbose stack     at Request.self.callback (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:199:22)
+39 verbose stack     at emitTwo (events.js:87:13)
+39 verbose stack     at Request.emit (events.js:172:7)
+39 verbose stack     at Request.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:1036:10)
+39 verbose stack     at emitOne (events.js:82:20)
+39 verbose stack     at Request.emit (events.js:169:7)
+39 verbose stack     at IncomingMessage.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:963:12)
+40 verbose statusCode 403
+41 verbose pkgid ngdropzone
+42 verbose cwd C:\var\ngDropzone
+43 error Windows_NT 6.3.9600
+44 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "publish"
+45 error node v4.4.3
+46 error npm  v2.15.1
+47 error code E403
+48 error "You cannot publish over the previously published version 0.0.2." : ngdropzone
+49 error If you need help, you may report this error at:
+49 error     <https://github.com/npm/npm/issues>
+50 verbose exit [ 1, true ]

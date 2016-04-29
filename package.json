@@ -1,0 +1,32 @@
+{
+  "name": "ngdropzone",
+  "version": "0.0.2",
+  "description": "AngularJS directive for Dropzone, an easy to use drag'n'drop file upload library. http://www.dropzonejs.com",
+  "main": "dist/ngDropzone.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "angular": "^1.4.9",
+    "dropzone": "^4.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thatisuday/ngDropzone.git"
+  },
+  "keywords": [
+    "dropzone",
+    "ngDropzone",
+    "ngdropzone"
+  ],
+  "author": "Uday Hiwarale <uhiwarale@gmail.com> (https://github.com/thatisuday)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thatisuday/ngDropzone/issues"
+  },
+  "homepage": "https://github.com/thatisuday/ngDropzone#readme"
+}

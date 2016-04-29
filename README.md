@@ -10,7 +10,6 @@ Run following command in your working directory using bash shell
 ```
 bower install ngDropzone
 ```
-_Latest stable version is **v0.0.2**_
 
 
 ### Install using npm
@@ -18,7 +17,6 @@ Run following command in your working directory using bash shell
 ```
 npm install ngdropzone
 ```
-_Latest stable version is **v0.0.2**_
 
 
 ### Install manually
@@ -29,7 +27,7 @@ You must have AngularJS library included for this directive to work : [Download 
 You need to download `dropzone.js` and `dropzone.css` files from dropzone repository : [Get from official release](https://github.com/enyo/dropzone/releases/tag/v4.3.0)
 
 ##### Step 3
-Download `ngDropzone.js` from this repository in `/dist` folder
+Download `ngDropzone.js` from this [official release](https://github.com/thatisuday/ngDropzone/releases)
 
 ##### Step 4
 Include above files in `<head></head>` section of your html page

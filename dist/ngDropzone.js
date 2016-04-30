@@ -30,15 +30,26 @@
 			template : '<div></div>',
 			replace : true,
 			scope : {
-				options : '=', //http://www.dropzonejs.com/#configuration-options
-				callbacks : '=' //http://www.dropzonejs.com/#events
+				options : '=?', //http://www.dropzonejs.com/#configuration-options
+				callbacks : '=?', //http://www.dropzonejs.com/#events
+				controls : '=?' //http://www.dropzonejs.com/#enqueuing-file-uploads
 			},
 			link : function(scope, iElem, iAttr){
 				//Set options for dropzone {override from dropzone options provider}
+				scope.options = scope.options || {};
 				var initOps = angular.extend({}, dropzoneOps, scope.options);
+				
 				
 				//Instantiate dropzone with initOps
 				var dropzone = new Dropzone(iElem[0], initOps);
+				
+				
+				//Control dropzone
+				scope.controls = scope.controls || {};
+				scope.controls.processQueue = function(){
+					dropzone.processQueue();
+				}
+				
 				
 				//Set invents (callbacks)
 				if(scope.callbacks){
@@ -48,8 +59,7 @@
 						'thumbnail', 'error', 'processing', 'uploadprogress',
 						'sending', 'success', 'complete', 'canceled', 'maxfilesreached',
 						'maxfilesexceeded', 'processingmultiple', 'sendingmultiple', 'successmultiple',
-						'completemultiple', 'canceledmultiple', 'totaluploadprogress', 'reset',
-						'queuecomplete', 'processQueue'
+						'completemultiple', 'canceledmultiple', 'totaluploadprogress', 'reset', 'queuecomplete'
 					];
 					angular.forEach(callbackMethods, function(method){
 						var callback = (scope.callbacks[method] || angular.noop);

@@ -13,7 +13,7 @@
 		 *	Add default options here
 		**/
 		var defOps = {
-			
+			//Add your options here
 		};
 		
 		return {
@@ -32,7 +32,7 @@
 			scope : {
 				options : '=?', //http://www.dropzonejs.com/#configuration-options
 				callbacks : '=?', //http://www.dropzonejs.com/#events
-				methods : '=?' //http://www.dropzonejs.com/#enqueuing-file-uploads
+				methods : '=?' //http://www.dropzonejs.com/#dropzone-methods
 			},
 			link : function(scope, iElem, iAttr){
 				//Set options for dropzone {override from dropzone options provider}
@@ -47,7 +47,7 @@
 				/*********************************************/
 				
 				
-				//Dropzone methods (Control actions)
+				//Instantiate Dropzone methods (Control actions)
 				scope.methods = scope.methods || {};
 				
 				scope.methods.getDropzone = function(){ 

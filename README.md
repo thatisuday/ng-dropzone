@@ -66,19 +66,19 @@ myNgApp.config(function(dropzoneOpsProvider){
 ## Create dropzone(s)
 You can create dropzone using `ng-dropzone` attribute or `<ng-dropzone></ng-dropzone>` element.
 ```
-<div class="dropzone" options="dzOptions" callbacks="dzCallbacks" controls="dzControls" ng-dropzone></div>
+<div class="dropzone" options="dzOptions" callbacks="dzCallbacks" methods="dzMethods" ng-dropzone></div>
 ```
 **_OR_**
 ```
-<ng-dropzone class="dropzone" options="dzOptions" callbacks="dzCallbacks" controls="dzControls"></ng-dropzone>
+<ng-dropzone class="dropzone" options="dzOptions" callbacks="dzCallbacks" methods="dzMethods"></ng-dropzone>
 ```
 > **options** attribute specifies model that will set [options](http://www.dropzonejs.com/#configuration-options) for dropzone and will override any options that may have been provided with **dropzoneOps** provider.
 
 > **callbacks** attribute specifies model that will handle [events](http://www.dropzonejs.com/#events) for dropzone.
 
-> **controls** attribute specifies model that will set [triggers](http://www.dropzonejs.com/#enqueuing-file-uploads) for dropzone.
+> **methods** attribute specifies model that will set [methods](http://www.dropzonejs.com/#dropzone-methods) for dropzone.
 
-As per above example, **_dzOptions_** is model that set options for dropzone while **_dzCallbacks_** is model that handles events for dropzone.
+As per above example, **_dzOptions_** is model that set options for dropzone, **_dzCallbacks_** is model that handles events for dropzone while **_dzMethods_** is model that triggers dropzone methods.
 
 
 
@@ -110,13 +110,16 @@ myNgApp.controller('main', function($scope){
 });
 ```
 
-#### [Enqueuing file uploads](http://www.dropzonejs.com/#enqueuing-file-uploads)
-By default, dropzone starts file upload when file is dropped or added to the list. But this can be prevented using `autoProcessQueue:false` in options. Then you have to manually start file upload using **_dzCallbacks_** model. You just have to call function `dzCallbacks.processQueue();` to start upload.
+#### NEW v1.0.4 : [dropzone-methods](http://www.dropzonejs.com/#dropzone-methods)
+By default, dropzone starts file upload when file is dropped or added to the list. But this can be prevented using `autoProcessQueue:false` in options. Then you have to manually start file upload using **_dzMethods_** model. You just have to call function `dzMethods.processQueue();` to start upload.
 
-For example `<button ng-click="dzControls.processQueue();">Start Uploading</button>`. **__⚑__** Check second dropzone in test.html.
+For example `<button ng-click="dzMethods.processQueue();">Start Uploading</button>`.
 
+Similarly there are few other methods that dropzone provide out of the box to play with dropzone files. 
 
->Take a look at **test.html** source code for better understanding of working with different controllers and options overriding.
+> For better understanding, **__⚑__**  checkout source code in /test/test.html file or visit [preview](ttps://htmlpreview.github.io/?https://github.com/thatisuday/ngDropzone/blob/master/test/test.html) of this directive.
+
+> I have added to more extra methods `getDropzone` and `getAllFiles` which returns **dropzone instance** and **dropzone files** respectively. These methods do not accept any _arguments_ and only work with _ngDropzone_.
 
 
 

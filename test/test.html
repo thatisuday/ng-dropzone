@@ -36,7 +36,8 @@
 		</p>
 		
 		<div ng-controller="drop1Controller">
-			<div id="dropzone1" class="dropzone" options="dzOptions" callbacks="dzCallbacks" ng-dropzone></div>
+			<button ng-click="dzCallbacks.processQueue();">Start Uploading</button>
+			<div id="dropzone1" class="dropzone" options="dzOptions" controls="processQueue" callbacks="dzCallbacks" ng-dropzone></div>
 		</div>
 		
 		<div ng-controller="drop2Controller">
@@ -97,7 +98,8 @@
 		myNgApp.controller('drop1Controller', function($scope, $timeout){
 			$scope.dzOptions = {
 				paramName : 'photo',
-				maxFilesize : '10'
+				maxFilesize : '10',
+				autoProcessQueue : false
 			};
 			
 			$scope.dzCallbacks = {

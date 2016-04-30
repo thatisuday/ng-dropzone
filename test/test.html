@@ -15,7 +15,7 @@
 		<script src="../dist/ngDropzone.js"></script>
 		
 		<!-- Misc -->
-		<link rel="stylesheet" href="https://rawgit.com/thatisuday/ngDropzone/master/extra/ngDzBeautify.css">
+		<link rel="stylesheet" href="../extra/ngDzBeautify.css">
 		<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
 		
 		<style>
@@ -47,10 +47,14 @@
 		
 		<!-- Dropzone 2 -->
 		<div ng-controller="drop2Controller">
-			<div style="text-align:center;" id="startUpload">
-				<button ng-click="dzControls.processQueue();" ng-show="showFileUpBtn">Start Uploading</button>
+			<div style="text-align:center;" id="startUpload" ng-show="showBtns">
+				<button ng-click="dzMethods.processQueue();">Start Uploading</button>
+				<button ng-click="dzMethods.removeAllFiles();">Remove All Files</button>
+				<button ng-click="dzMethods.removeFile(lastFile);">Remove Last File</button>
+				<button ng-click="getDropzone();">Get getDropzone instance</button>
+				<button ng-click="getFiles();">Get total files</button>
 			</div>
-			<div id="dropzone2" class="dropzone sm" options="dzOptions" controls="dzControls" callbacks="dzCallbacks" ng-dropzone></div>
+			<div id="dropzone2" class="dropzone sm" options="dzOptions" methods="dzMethods" callbacks="dzCallbacks" ng-dropzone></div>
 		</div>
 		<!----------------------------------------------------------------------------------
 		----------------------------------------------------------------------------------->
@@ -123,20 +127,31 @@
 		
 		// Dropzone 2
 		myNgApp.controller('drop2Controller', function($scope, $timeout){
-			$scope.showFileUpBtn = false;
+			$scope.showBtns = false;
+			$scope.lastFile = null;
+			$scope.getDropzone = function(){
+				console.log($scope.dzMethods.getDropzone());
+				alert('Check console log.');
+			};
+			$scope.getFiles = function(){
+				console.log($scope.dzMethods.getAllFiles());
+				alert('Check console log.');
+			};
 			
 			$scope.dzOptions = {
 				url : '/upload_2.php',
-				dictDefaultMessage : 'PNG ONLY : Click to add or drop photos',
-				acceptedFiles : 'image/png',
+				dictDefaultMessage : 'jpeg only : with methods',
+				acceptedFiles : 'image/jpeg',
+				parallelUploads : 5,
 				autoProcessQueue : false
 			};
 			
-			$scope.dzControls = {};
+			$scope.dzMethods = {};
 			
 			$scope.dzCallbacks = {
-				'addedfile' : function(){
-					$scope.showFileUpBtn = true;
+				'addedfile' : function(file){
+					$scope.showBtns = true;
+					$scope.lastFile = file;
 				},
 				'error' : function(file, xhr){
 					console.warn('File failed to upload from dropzone 2.', file, xhr);

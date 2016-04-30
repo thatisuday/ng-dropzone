@@ -32,7 +32,7 @@
 			scope : {
 				options : '=?', //http://www.dropzonejs.com/#configuration-options
 				callbacks : '=?', //http://www.dropzonejs.com/#events
-				controls : '=?' //http://www.dropzonejs.com/#enqueuing-file-uploads
+				methods : '=?' //http://www.dropzonejs.com/#enqueuing-file-uploads
 			},
 			link : function(scope, iElem, iAttr){
 				//Set options for dropzone {override from dropzone options provider}
@@ -44,11 +44,35 @@
 				var dropzone = new Dropzone(iElem[0], initOps);
 				
 				
-				//Control dropzone
-				scope.controls = scope.controls || {};
-				scope.controls.processQueue = function(){
-					dropzone.processQueue();
-				}
+				/*********************************************/
+				
+				
+				//Dropzone methods (Control actions)
+				scope.methods = scope.methods || {};
+				
+				scope.methods.getDropzone = function(){ 
+					return dropzone; //Return dropzone instance
+				};
+				
+				scope.methods.getAllFiles = function(){ 
+					return dropzone.files; //Return all files
+				};
+				
+				var controlMethods = [
+					'removeFile', 'removeAllFiles', 'processQueue',
+					'getAcceptedFiles', 'getRejectedFiles', 'getQueuedFiles', 'getUploadingFiles',
+					'disable', 'enable', 'confirm', 'createThumbnailFromUrl'
+				];
+				
+				angular.forEach(controlMethods, function(methodName){
+					scope.methods[methodName] = function(){
+						dropzone[methodName].apply(dropzone, arguments);
+						if(!scope.$$phase && !scope.$root.$$phase) scope.$apply();
+					}
+				});
+				
+				
+				/*********************************************/
 				
 				
 				//Set invents (callbacks)
@@ -65,9 +89,7 @@
 						var callback = (scope.callbacks[method] || angular.noop);
 						dropzone.on(method, function(){
 							callback.apply(null, arguments);
-							if(!scope.$$phase && !scope.$root.$$phase){
-								scope.$apply();
-							}
+							if(!scope.$$phase && !scope.$root.$$phase) scope.$apply();
 						});
 					});
 				}

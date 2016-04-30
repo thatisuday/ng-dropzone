@@ -66,15 +66,17 @@ myNgApp.config(function(dropzoneOpsProvider){
 ## Create dropzone(s)
 You can create dropzone using `ng-dropzone` attribute or `<ng-dropzone></ng-dropzone>` element.
 ```
-<div class="dropzone" options="dzOptions" callbacks="dzCallbacks" ng-dropzone></div>
+<div class="dropzone" options="dzOptions" callbacks="dzCallbacks" controls="dzControls" ng-dropzone></div>
 ```
 **_OR_**
 ```
-<ng-dropzone class="dropzone" options="dzOptions" callbacks="dzCallbacks"></ng-dropzone>
+<ng-dropzone class="dropzone" options="dzOptions" callbacks="dzCallbacks" controls="dzControls"></ng-dropzone>
 ```
-> **options** attribute specifies model that will set [dropzone options](http://www.dropzonejs.com/#configuration-options) for dropzone and will override any options that may have been provided with **dropzoneOps** provider.
+> **options** attribute specifies model that will set [options](http://www.dropzonejs.com/#configuration-options) for dropzone and will override any options that may have been provided with **dropzoneOps** provider.
 
-> **callbacks** attribute specifies model that will handle [dropzone events](http://www.dropzonejs.com/#events) for dropzone.
+> **callbacks** attribute specifies model that will handle [events](http://www.dropzonejs.com/#events) for dropzone.
+
+> **controls** attribute specifies model that will set [triggers](http://www.dropzonejs.com/#enqueuing-file-uploads) for dropzone.
 
 As per above example, **_dzOptions_** is model that set options for dropzone while **_dzCallbacks_** is model that handles events for dropzone.
 
@@ -107,6 +109,12 @@ myNgApp.controller('main', function($scope){
 	};
 });
 ```
+
+#### [Enqueuing file uploads](http://www.dropzonejs.com/#enqueuing-file-uploads)
+By default, dropzone starts file upload when file is dropped or added to the list. But this can be prevented using `autoProcessQueue:false` in options. Then you have to manually start file upload using **_dzCallbacks_** model. You just have to call function `dzCallbacks.processQueue();` to start upload.
+
+For example `<button ng-click="dzControls.processQueue();">Start Uploading</button>`. **__⚑__** Check second dropzone in test.html.
+
 
 >Take a look at **test.html** source code for better understanding of working with different controllers and options overriding.
 

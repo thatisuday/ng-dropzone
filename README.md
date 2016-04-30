@@ -48,6 +48,7 @@ Include `thatisuday.dropzone` module inside your angular app.
 var myNgApp = angular.module('myAppName', ['thatisuday.dropzone']);
 ```
 
+####⛹Optional
 > You can configure dropzone before an app starts running. ngDropzone comes with built in **dropzoneOps** provider to configure [dropzone options](http://www.dropzonejs.com/#configuration-options) which can be implemented as below. _setOptions_ function will set default options fot all your dropzone instances in that app.
 
 ```
@@ -60,6 +61,7 @@ myNgApp.config(function(dropzoneOpsProvider){
 });
 ```
 
+####⛹Optional
 >You can also add default options in **dropzoneOps** provider `(ngDropzone.js)` inside `defOps` object. This is very helpful in case you have multiple apps.  **_But it is not recommended because if you upgrade this directive in future, your app might not behave the way it should._**
 
 
@@ -110,7 +112,7 @@ myNgApp.controller('main', function($scope){
 });
 ```
 
-#### NEW v1.0.4 : [dropzone-methods](http://www.dropzonejs.com/#dropzone-methods)
+####⛹Optional (in v1.0.4) : [dropzone-methods](http://www.dropzonejs.com/#dropzone-methods)
 By default, dropzone starts file upload when file is dropped or added to the list. But this can be prevented using `autoProcessQueue:false` in options. Then you have to manually start file upload using **_dzMethods_** model. You just have to call function `dzMethods.processQueue();` to start upload.
 
 For example `<button ng-click="dzMethods.processQueue();">Start Uploading</button>`.
@@ -123,7 +125,7 @@ Similarly there are few other methods that dropzone provide out of the box to pl
 
 
 
-# Beautify Dropzone
+# ⛹Optional :Beautify Dropzone
 Add `beautify.css` file below `dropzone.css` file for professional looking dropzone.
 
 

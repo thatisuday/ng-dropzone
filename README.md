@@ -6,14 +6,14 @@ AngularJS directive for __[dropzone](https://github.com/enyo/dropzone)__
 ## Getting started
 
 ### Install using bower
-Run following command in your working directory using bash shell
+Run following command in your working directory using shell/cmd
 ```
 bower install ngDropzone
 ```
 
 
 ### Install using npm
-Run following command in your working directory using bash shell
+Run following command in your working directory using shell/cmd
 ```
 npm install ngdropzone
 ```

@@ -1,4 +1,4 @@
-# ngDropzone ☛ : [Preview](https://htmlpreview.github.io/?https://github.com/thatisuday/ngDropzone/blob/master/test/test.html)
+# ngDropzone ☛ : [Preview](https://rawgit.com/thatisuday/ngDropzone/master/test/test.html)
 AngularJS directive for __[dropzone](https://github.com/enyo/dropzone)__
 
 

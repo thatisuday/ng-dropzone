@@ -74,13 +74,13 @@ You can create dropzone using `ng-dropzone` attribute or `<ng-dropzone></ng-drop
 ```
 <ng-dropzone class="dropzone" options="dzOptions" callbacks="dzCallbacks" methods="dzMethods"></ng-dropzone>
 ```
-> **options** attribute specifies model that will set [options](http://www.dropzonejs.com/#configuration-options) for dropzone and will override any options that may have been provided with **dropzoneOps** provider.
+> **options** attribute specifies model that will set [options (click to see)](http://www.dropzonejs.com/#configuration-options) for dropzone and will override any options that may have been provided with **dropzoneOps** provider. For example, `$scope.dropzoneOps = {bla:bleh,...};`
 
-> **callbacks** attribute specifies model that will handle [events](http://www.dropzonejs.com/#events) for dropzone.
+> **callbacks** attribute specifies model that will handle [events (click to see)](http://www.dropzonejs.com/#events) for dropzone. For example, `$scope.dzCallbacks.addedfile = function(file){//do something};`
 
-> **methods** attribute specifies model that will set [methods](http://www.dropzonejs.com/#dropzone-methods) for dropzone.
+> **methods** attribute specifies model that will set [methods (click to see)](http://www.dropzonejs.com/#dropzone-methods) for dropzone. For example, `$scope.dzMethods.removeFile(file);` or `<button ng-click="dzMethods.removeAllFiles();">...</button>`
 
-As per above example, **_dzOptions_** is model that set options for dropzone, **_dzCallbacks_** is model that handles events for dropzone while **_dzMethods_** is model that triggers dropzone methods.
+As per above example, **_dzOptions_** is model that set options for dropzone, **_dzCallbacks_** is model that handles events for dropzone while **_dzMethods_** is _gateway_ model that triggers dropzone methods.
 
 
 
@@ -104,22 +104,29 @@ myNgApp.controller('main', function($scope){
 	//Handle events for dropzone
 	//Visit http://www.dropzonejs.com/#events for more events
 	$scope.dzCallbacks = {
+		'addedfile' : function(file){
+			console.log(file);
+			$scope.newFile = file;
+		},
 		'success' : function(file, xhr){
 			console.log(file, xhr);
 		},
 		...
 	};
+	
+	
+	//Apply methods for dropzone
+	//Visit http://www.dropzonejs.com/#dropzone-methods for more methods
+	$scope.dzMethods = {};
+	$scope.removeNewFile = function(){
+		$scope.dzMethods.removeFile($scope.newFile); //We got $scope.newFile from 'addedfile' event callback
+	}
 });
 ```
 
-####⛹Optional (in v1.0.4) : [dropzone-methods](http://www.dropzonejs.com/#dropzone-methods)
 By default, dropzone starts file upload when file is dropped or added to the list. But this can be prevented using `autoProcessQueue:false` in options. Then you have to manually start file upload using **_dzMethods_** model. You just have to call function `dzMethods.processQueue();` to start upload.
 
-For example `<button ng-click="dzMethods.processQueue();">Start Uploading</button>`.
-
-Similarly there are few other methods that dropzone provide out of the box to play with dropzone files. 
-
-> For better understanding, **__⚑__**  checkout source code in /test/test.html file or visit [preview](ttps://htmlpreview.github.io/?https://github.com/thatisuday/ngDropzone/blob/master/test/test.html) of this directive.
+> For better understanding, **__⚑__**  checkout source code in /test/test.html file or visit second example in  [preview](https://rawgit.com/thatisuday/ngDropzone/master/test/test.html) of this directive.
 
 > I have added to more extra methods `getDropzone` and `getAllFiles` which returns **dropzone instance** and **dropzone files** respectively. These methods do not accept any _arguments_ and only work with _ngDropzone_.
 

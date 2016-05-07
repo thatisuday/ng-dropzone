@@ -128,7 +128,7 @@ By default, dropzone starts file upload when file is dropped or added to the lis
 
 > For better understanding, **__⚑__**  checkout source code in /test/test.html file or visit second example in  [preview](https://rawgit.com/thatisuday/ngDropzone/master/test/test.html) of this directive.
 
-> I have added to more extra methods `getDropzone` and `getAllFiles` which returns **dropzone instance** and **dropzone files** respectively. These methods do not accept any _arguments_ and only work with _ngDropzone_.
+> I have added two more extra methods `getDropzone` and `getAllFiles` which returns **dropzone instance** and **dropzone files** respectively. These methods do not accept any _arguments_ and only work with _ngDropzone_.
 
 
 

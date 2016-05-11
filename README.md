@@ -138,4 +138,4 @@ Add `beautify.css` file below `dropzone.css` file for professional looking dropz
 
 
 # Complaints & Contribute
-Create an issue and mention your commits there. Don't take a fork.
+Feel free to create as many issues as you want. Take a fork and create pull request for bug fixes and enhancements.

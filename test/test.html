@@ -27,6 +27,23 @@
 				min-height:250px;
 				margin: 10px auto;
 			}
+			
+			#buttonDropzone{
+				position:relative;
+			}
+			#buttonDropzone .dropzone{
+				opacity: 0;
+				margin: 0;
+				padding: 0;
+				min-width: 0;
+				min-height: 0;
+				width: auto;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				position: absolute;
+			}
 		</style>
 	</head>
 	<body>
@@ -56,6 +73,19 @@
 			</div>
 			<div id="dropzone2" class="dropzone sm" options="dzOptions" methods="dzMethods" callbacks="dzCallbacks" ng-dropzone></div>
 		</div>
+		
+		<br/><br/>
+		
+		<!-- Dropzone 3 -->
+		<h4 style="text-align:center;">Dropzone for button as a trigger</h4>
+		<div ng-controller="drop3Controller" style="text-align:center;">
+			<button id="buttonDropzone" style="position:relative;">
+				<div id="dropzone3" class="dropzone" options="dzOptions" callbacks="dzCallbacks" ng-dropzone></div>
+				Upload Profile Pic
+			</button>
+		</div>
+		
+		
 		<!----------------------------------------------------------------------------------
 		----------------------------------------------------------------------------------->
 		
@@ -155,6 +185,22 @@
 				},
 				'error' : function(file, xhr){
 					console.warn('File failed to upload from dropzone 2.', file, xhr);
+				}
+			};
+		});
+		
+		
+		
+		
+		// Dropzone 3
+		myNgApp.controller('drop3Controller', function($scope, $timeout){
+			$scope.dzOptions = {
+				hiddenInputContainer : '#buttonDropzone'
+			};
+			
+			$scope.dzCallbacks = {
+				'addedfile' : function(file){
+					console.info('File added from dropzone 1.', file);
 				}
 			};
 		});

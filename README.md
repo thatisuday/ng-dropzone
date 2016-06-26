@@ -1,4 +1,4 @@
-# ngDropzone ☛ : [Preview](https://rawgit.com/thatisuday/ngDropzone/master/test/test.html)
+# ng-dropzone ☛ : [Preview](https://rawgit.com/thatisuday/ng-dropzone/master/test/test.html)
 AngularJS directive for __[dropzone](https://github.com/enyo/dropzone)__
 
 
@@ -8,14 +8,7 @@ AngularJS directive for __[dropzone](https://github.com/enyo/dropzone)__
 ### Install using bower
 Run following command in your working directory using shell/cmd
 ```
-bower install ngDropzone
-```
-
-
-### Install using npm
-Run following command in your working directory using shell/cmd
-```
-npm install ngdropzone
+bower install ngdropzone
 ```
 
 
@@ -27,7 +20,7 @@ You must have AngularJS library included for this directive to work : [Download 
 You need to download `dropzone.js` and `dropzone.css` files from dropzone repository : [Get from official release](https://github.com/enyo/dropzone/releases/tag/v4.3.0)
 
 ##### Step 3
-Download `ngDropzone.js` from this [official release](https://github.com/thatisuday/ngDropzone/releases)
+Download `ng-dropzone.js` from this [official release](https://github.com/thatisuday/ng-dropzone/releases)
 
 ##### Step 4
 Include above files in `<head></head>` section of your html page
@@ -49,7 +42,7 @@ var myNgApp = angular.module('myAppName', ['thatisuday.dropzone']);
 ```
 
 ####⛹Optional
-> You can configure dropzone before an app starts running. ngDropzone comes with built in **dropzoneOps** provider to configure [dropzone options](http://www.dropzonejs.com/#configuration-options) which can be implemented as below. _setOptions_ function will set default options fot all your dropzone instances in that app.
+> You can configure dropzone before an app starts running. ng-dropzone comes with built in **dropzoneOps** provider to configure [dropzone options](http://www.dropzonejs.com/#configuration-options) which can be implemented as below. _setOptions_ function will set default options fot all your dropzone instances in that app.
 
 ```
 myNgApp.config(function(dropzoneOpsProvider){
@@ -62,7 +55,7 @@ myNgApp.config(function(dropzoneOpsProvider){
 ```
 
 ####⛹Optional
->You can also add default options in **dropzoneOps** provider `(ngDropzone.js)` inside `defOps` object. This is very helpful in case you have multiple apps.  **_But it is not recommended because if you upgrade this directive in future, your app might not behave the way it should._**
+>You can also add default options in **dropzoneOps** provider `(ng-dropzone.js)` inside `defOps` object. This is very helpful in case you have multiple apps.  **_But it is not recommended because if you upgrade this directive in future, your app might not behave the way it should._**
 
 
 ## Create dropzone(s)
@@ -126,9 +119,9 @@ myNgApp.controller('main', function($scope){
 
 By default, dropzone starts file upload when file is dropped or added to the list. But this can be prevented using `autoProcessQueue:false` in options. Then you have to manually start file upload using **_dzMethods_** model. You just have to call function `dzMethods.processQueue();` to start upload.
 
-> For better understanding, **__⚑__**  checkout source code in /test/test.html file or visit second example in  [preview](https://rawgit.com/thatisuday/ngDropzone/master/test/test.html) of this directive.
+> For better understanding, **__⚑__**  checkout source code in /test/test.html file or visit second example in  [preview](https://rawgit.com/thatisuday/ng-dropzone/master/test/test.html) of this directive.
 
-> I have added two more extra methods `getDropzone` and `getAllFiles` which returns **dropzone instance** and **dropzone files** respectively. These methods do not accept any _arguments_ and only work with _ngDropzone_.
+> I have added two more extra methods `getDropzone` and `getAllFiles` which returns **dropzone instance** and **dropzone files** respectively. These methods do not accept any _arguments_ and only work with _ng-dropzone_.
 
 
 

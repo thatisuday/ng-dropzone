@@ -1,11 +1,11 @@
 ![](https://camo.githubusercontent.com/0ac4844780d7e981e44a9ca97887476f50a0b840/687474703a2f2f7777772e64726f707a6f6e656a732e636f6d2f696d616765732f6e65772d6c6f676f2e737667)
 # ng-dropzone
 AngularJS directive for __[dropzone](https://github.com/enyo/dropzone)__
-####[Preview](https://rawgit.com/thatisuday/ng-dropzone/master/test/test.html)
+#### 🙈 [Preview](https://rawgit.com/thatisuday/ng-dropzone/master/test/test.html)
 
 
 
-## Getting started
+## 1. Getting started
 
 ### → Install using bower
 Run following command in your working directory using shell/cmd
@@ -32,7 +32,7 @@ Include above files in `<head></head>` section of your html page
 
 ----------
 
-## Create .js file and set _Dropzone.autoDiscover_ to _false_
+## 2. Create .js file and set _Dropzone.autoDiscover_ to _false_
 ```
 //Add below line at the top of your JavaScript code
 Dropzone.autoDiscover = false;
@@ -40,7 +40,7 @@ Dropzone.autoDiscover = false;
 ```
 
 
-## Configure your angular app
+## 3. Configure your angular app
 Include `thatisuday.dropzone` module inside your angular app.
 ```
 var myNgApp = angular.module('myAppName', ['thatisuday.dropzone']);
@@ -63,7 +63,7 @@ myNgApp.config(function(dropzoneOpsProvider){
 >You can also add default options in **dropzoneOps** provider `(ng-dropzone.min.js)` inside `defOps` object. This is very helpful in case you have multiple apps.  **_But it is not recommended because if you upgrade this directive in future, your app might not behave the way it should._**
 
 
-## Create dropzone(s)
+## 4. Create dropzone(s)
 You can create dropzone using `ng-dropzone` attribute or `<ng-dropzone></ng-dropzone>` element.
 ```
 <div class="dropzone" options="dzOptions" callbacks="dzCallbacks" methods="dzMethods" ng-dropzone></div>
@@ -82,7 +82,7 @@ As per above example, **_dzOptions_** is model that set options for dropzone, **
 
 
 
-## Configure dropzone(s)
+## 5. Configure dropzone(s)
 **callbacks** are not necessary for your dropzone to work, these are just events that you may need as a callback for certain activities of your dropzone. But **options** must be given inside your controller _unless you are configuring it from **dropzoneOps** provider_. _url_ field in dropzone options is mandatory.
 
 ```
@@ -129,7 +129,7 @@ By default, dropzone starts file upload when file is dropped or added to the lis
 > I have added two more extra methods `getDropzone` and `getAllFiles` which returns **dropzone instance** and **dropzone files** respectively. These methods do not accept any _arguments_ and only work with _ng-dropzone_.
 
 
-# Complaints & Contribute
+## 6. Complaints & Contribute
 1. Feel free to create as many issues as you want to report bugs.
 2. Take a fork and create pull request for bug fixes and enhancements.
 3. Please raise an issue if `dropzone.js` have new updates.

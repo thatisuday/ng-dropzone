@@ -2,20 +2,20 @@
 <html ng-app="myNgApp">
 	<head>
 		<meta charset="utf-8">
-		<title>ngDropzone simple example</title>
+		<title>ng-dropzone simple example</title>
 		
 		<!-- AngularJS -->
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
 		
 		<!-- Dropzone -->
-		<script src="https://rawgit.com/enyo/dropzone/master/dist/dropzone.js"></script>
-		<link rel="stylesheet" href="https://rawgit.com/enyo/dropzone/master/dist/dropzone.css">
+		<script src="https://rawgit.com/enyo/dropzone/d8ef7a82e6ab5447c1f2d9512c8e1bfd4de5ac9e/dist/dropzone.js"></script>
+		<link rel="stylesheet" href="https://rawgit.com/enyo/dropzone/d8ef7a82e6ab5447c1f2d9512c8e1bfd4de5ac9e/dist/dropzone.css">
 		
-		<!-- ngDropzone -->
-		<script src="../dist/ngDropzone.js"></script>
+		<!-- ng-dropzone -->
+		<script src="../dist/ng-dropzone.min.js"></script>
 		
 		<!-- Misc -->
-		<link rel="stylesheet" href="../extra/ngDzBeautify.css">
+		<link rel="stylesheet" href="../dist/ng-dropzone.min.css">
 		<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
 		
 		<style>
@@ -27,34 +27,22 @@
 				min-height:250px;
 				margin: 10px auto;
 			}
-			
-			#buttonDropzone{
-				position:relative;
-			}
-			#buttonDropzone .dropzone{
-				opacity: 0;
-				margin: 0;
-				padding: 0;
-				min-width: 0;
-				min-height: 0;
-				width: auto;
-				top: 0;
-				right: 0;
-				bottom: 0;
-				left: 0;
-				position: absolute;
+			#dropzone3{
+				display: none;
 			}
 		</style>
 	</head>
 	<body>
-		<h1 style="text-align:center; margin-bottom:0px; color:#CDDC39;">ngDropzone</h1>
+		<h1 style="text-align:center; margin-bottom:0px; color:#000;">ng-dropzone</h1>
 		<p style="text-align:center; color:#666; font-weight:300;">
 			Angularjs directive for Dropzone, an easy to use drag'n'drop file upload library.
 		</p>
 		
-		<!-----------------------------------------------------------------------------------
-											Dropzones
-		----------------------------------------------------------------------------------->
+
+		<!-- ####################################################### -->
+		<!-- #####################   DROPZONES  #################### -->
+		<!-- ####################################################### -->
+		
 		<!-- Dropzone 1 -->
 		<div ng-controller="drop1Controller">
 			<div id="dropzone1" class="dropzone" options="dzOptions" callbacks="dzCallbacks" ng-dropzone></div>
@@ -79,36 +67,29 @@
 		<!-- Dropzone 3 -->
 		<h4 style="text-align:center;">Dropzone for button as a trigger</h4>
 		<div ng-controller="drop3Controller" style="text-align:center;">
-			<button id="buttonDropzone" style="position:relative;">
-				<div id="dropzone3" class="dropzone" options="dzOptions" callbacks="dzCallbacks" ng-dropzone></div>
-				Upload Profile Pic
-			</button>
+			<button id="buttonDropzone" style="position:relative;">Upload Profile Pic</button>
+			<div id="dropzone3" class="dropzone" options="dzOptions" callbacks="dzCallbacks" ng-dropzone></div>
+			<p><small>Chech source code to know how to set up. You need to set display:none on dropzone.</small></p>
 		</div>
-		
-		
-		<!----------------------------------------------------------------------------------
-		----------------------------------------------------------------------------------->
+
+
+		<!-- ####################################################### -->
+		<!-- #######################  FOOTER  ###################### -->
+		<!-- ####################################################### -->
 		
 		<br/><hr/><br/>
 		
-		<p style="text-align:center; margin:0; color:#333; font-weight:500;">
-			Go through source code of this page (url below), you will have an epiphany.
-		</p>
-		<p style="text-align:center; font-size:12px; margin:3px 0; color:#666; font-weight:400;">
-			https://raw.githubusercontent.com/thatisuday/ngDropzone/master/test/test.html
-		</p>
-		
 		<p style="text-align:center; font-size:12px; color:#999;">
-			We have used beautify.css for clean dropzone UI in these examples.
+			I have used ng-dropzone.css for clean dropzone UI in these examples.
 		</p>
 		
 		<style>.gitBtns iframe:not(:last-child){margin-right:15px;}</style>
 		<div class="gitBtns" style="margin:10px auto; text-align:center;">
 			<a class="github-button" href="https://github.com/thatisuday" data-count-href="/thatisuday/followers" data-count-api="/users/thatisuday#followers" data-count-aria-label="# followers on GitHub" aria-label="Follow @thatisuday on GitHub">Follow @thatisuday</a>
 			
-			<a class="github-button" href="https://github.com/thatisuday/ngDropzone" data-icon="octicon-star" data-count-href="/thatisuday/ngDropzone/stargazers" data-count-api="/repos/thatisuday/ngDropzone#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star thatisuday/ngDropzone on GitHub">Star</a>
+			<a class="github-button" href="https://github.com/thatisuday/ng-dropzone" data-icon="octicon-star" data-count-href="/thatisuday/ng-dropzone/stargazers" data-count-api="/repos/thatisuday/ng-dropzone#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star thatisuday/ng-dropzone on GitHub">Star</a>
 			
-			<a class="github-button" href="https://github.com/thatisuday/ngDropzone/archive/master.zip" data-icon="octicon-cloud-download" aria-label="Download thatisuday/ngDropzone on GitHub">Download</a>
+			<a class="github-button" href="https://github.com/thatisuday/ng-dropzone/archive/master.zip" data-icon="octicon-cloud-download" aria-label="Download thatisuday/ng-dropzone on GitHub">Download</a>
 		</div>
 
 		<p style="text-align:center; font-size:16px;">
@@ -116,15 +97,15 @@
 			
 			<br/>
 			
-			<a style="color:#000!important; text-decoration:none; font-weight:700; text-transform:uppercase;" href="https://github.com/thatisuday/ngDropzone">Go Back to GitHub</a>
+			<a style="color:#000!important; text-decoration:none; font-weight:700; text-transform:uppercase;" href="https://github.com/thatisuday/ng-dropzone">Go Back to GitHub</a>
 		</p>
 		
 		<br/><br/>
 		
 		
-		<!-------------------------------------------------------------------------
-			Dropzone JavaScript Source Code
-		---------------------------------------------------------------------------->
+		<!-- ####################################################### -->
+		<!-- #####################  JAVASCRIPT  #################### -->
+		<!-- ####################################################### -->
 		<script>
 		Dropzone.autoDiscover = false;
 		var myNgApp = angular.module('myNgApp', ['thatisuday.dropzone']);
@@ -192,10 +173,12 @@
 		
 		
 		
-		// Dropzone 3
+		// Dropzone 3 (button dropzone)
 		myNgApp.controller('drop3Controller', function($scope, $timeout){
 			$scope.dzOptions = {
-				hiddenInputContainer : '#buttonDropzone'
+				previewsContainer : false,
+				clickable : '#buttonDropzone', 
+				autoProcessQueue : false
 			};
 			
 			$scope.dzCallbacks = {
@@ -205,9 +188,11 @@
 			};
 		});
 		</script>
-		<!---------------------------------------------------------------------------------------->
-		
-		<!-- Place this tag right after the last button or just before your close body tag. -->
+
+
+		<!-- ####################################################### -->
+		<!-- ######################  ASYNC JS  ##################### -->
+		<!-- ####################################################### -->
 		<script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
 	</body>
 </html>

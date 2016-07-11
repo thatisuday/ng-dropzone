@@ -1,11 +1,11 @@
 {
-  "name": "ngDropzone",
-  "homepage": "https://github.com/thatisuday/ngDropzone",
+  "name": "ng-dropzone",
+  "homepage": "https://github.com/thatisuday/ng-dropzone",
   "authors": [
     "Uday Hiwarale <uhiwarale@gmail.com>"
   ],
   "description": "AngularJS directive for Dropzone, an easy to use drag'n'drop file upload library. http://www.dropzonejs.com",
-  "main": "dist/ngDropzone.js",
+  "main": "dist/ng-dropzone.js",
   "keywords": [
     "ngDropzone",
     "dropzone"

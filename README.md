@@ -7,14 +7,17 @@ AngularJS directive for __[dropzone](https://github.com/enyo/dropzone)__
 
 ## Getting started
 
-### Install using bower
+### → Install using bower
 Run following command in your working directory using shell/cmd
 ```
 bower install ngdropzone
 ```
 
+1. Include `angular.js` and `dropzone.js`, `dropzone.css` from bower_components.
+2. Include `ng-dropzone.min.js` from `dist` folder of `ng-dropzone` package inside bower_component.
+3. You can also include `ng-dropzone.min.css` but it's not necessary. I have **overridden** some **ugly looking** css from `dropzone.css`
 
-### Install manually
+### → Install manually
 ##### Step 1
 You must have AngularJS library included for this directive to work : [Download from Google CDN](https://developers.google.com/speed/libraries/#angularjs)
 
@@ -126,11 +129,7 @@ By default, dropzone starts file upload when file is dropped or added to the lis
 > I have added two more extra methods `getDropzone` and `getAllFiles` which returns **dropzone instance** and **dropzone files** respectively. These methods do not accept any _arguments_ and only work with _ng-dropzone_.
 
 
-
-# ⛹Optional :Beautify Dropzone
-Add `ng-dropzone.min.css` file below `dropzone.css` file for professional looking dropzone.
-
-
-
 # Complaints & Contribute
-Feel free to create as many issues as you want. Take a fork and create pull request for bug fixes and enhancements.
+1. Feel free to create as many issues as you want to report bugs.
+2. Take a fork and create pull request for bug fixes and enhancements.
+3. Please raise an issue if `dropzone.js` have new updates.

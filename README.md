@@ -22,7 +22,7 @@ You must have AngularJS library included for this directive to work : [Download 
 You need to download `dropzone.js` and `dropzone.css` files from dropzone repository : [Get from official release](https://github.com/enyo/dropzone/releases/tag/v4.3.0)
 
 ##### Step 3
-Download `ng-dropzone.js` from this [official release](https://github.com/thatisuday/ng-dropzone/releases)
+Download `ng-dropzone.min.js` from this [official release](https://github.com/thatisuday/ng-dropzone/releases)
 
 ##### Step 4
 Include above files in `<head></head>` section of your html page
@@ -57,7 +57,7 @@ myNgApp.config(function(dropzoneOpsProvider){
 ```
 
 ####⛹Optional
->You can also add default options in **dropzoneOps** provider `(ng-dropzone.js)` inside `defOps` object. This is very helpful in case you have multiple apps.  **_But it is not recommended because if you upgrade this directive in future, your app might not behave the way it should._**
+>You can also add default options in **dropzoneOps** provider `(ng-dropzone.min.js)` inside `defOps` object. This is very helpful in case you have multiple apps.  **_But it is not recommended because if you upgrade this directive in future, your app might not behave the way it should._**
 
 
 ## Create dropzone(s)
@@ -128,7 +128,7 @@ By default, dropzone starts file upload when file is dropped or added to the lis
 
 
 # ⛹Optional :Beautify Dropzone
-Add `beautify.css` file below `dropzone.css` file for professional looking dropzone.
+Add `ng-dropzone.min.css` file below `dropzone.css` file for professional looking dropzone.
 
 
 

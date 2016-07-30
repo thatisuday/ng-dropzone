@@ -42,6 +42,7 @@ Dropzone.autoDiscover = false;
 //This will prevent Dropzone to instantiate on it's own unless you are using dropzone class for styling
 ```
 
+***
 
 ## 3. Configure your angular app
 Include `thatisuday.dropzone` module inside your angular app.
@@ -65,6 +66,7 @@ myNgApp.config(function(dropzoneOpsProvider){
 ####⛹Optional
 >You can also add default options in **dropzoneOps** provider `(ng-dropzone.min.js)` inside `defOps` object. This is very helpful in case you have multiple apps.  **_But it is not recommended because if you upgrade this directive in future, your app might not behave the way it should._**
 
+***
 
 ## 4. Create dropzone(s)
 You can create dropzone using `ng-dropzone` attribute or `<ng-dropzone></ng-dropzone>` element.
@@ -83,7 +85,7 @@ You can create dropzone using `ng-dropzone` attribute or `<ng-dropzone></ng-drop
 
 As per above example, **_dzOptions_** is model that set options for dropzone, **_dzCallbacks_** is model that handles events for dropzone while **_dzMethods_** is _gateway_ model that triggers dropzone methods.
 
-
+***
 
 ## 5. Configure dropzone(s)
 **callbacks** are not necessary for your dropzone to work, these are just events that you may need as a callback for certain activities of your dropzone. But **options** must be given inside your controller _unless you are configuring it from **dropzoneOps** provider_. _url_ field in dropzone options is mandatory.
@@ -131,8 +133,14 @@ By default, dropzone starts file upload when file is dropped or added to the lis
 
 > I have added two more extra methods `getDropzone` and `getAllFiles` which returns **dropzone instance** and **dropzone files** respectively. These methods do not accept any _arguments_ and only work with _ng-dropzone_.
 
+***
 
-## 6. Complaints & Contribute
+## 6. Buffer paste
+use **[ng-buffer-dropzone](https://github.com/thatisuday/ng-buffer-dropzone)** for image buffer paste on dropzone.
+
+***
+
+## 7. Complaints & Contribute
 1. Feel free to create as many issues as you want to report bugs.
 2. Take a fork and create pull request for bug fixes and enhancements.
 3. Please raise an issue if `dropzone.js` have new updates.

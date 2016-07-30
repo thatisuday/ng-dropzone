@@ -21,6 +21,7 @@ gulp.task('buildJS', function(){
 	.pipe(rename({suffix:'.min'}))
 	.pipe(uglify())
 	.pipe(sourcemaps.write('./'))
+	.pipe(gulp.dest('dist'))
 	.pipe(gzip({append:true}))
 	.pipe(gulp.dest('dist'))
 });
@@ -37,6 +38,7 @@ gulp.task('buildSASS', function(){
 	.pipe(rename({suffix:'.min'}))
 	.pipe(cssmin())
 	.pipe(sourcemaps.write('./'))
+	.pipe(gulp.dest('dist'))
 	.pipe(gzip({append:true}))
 	.pipe(gulp.dest('dist'))
 });

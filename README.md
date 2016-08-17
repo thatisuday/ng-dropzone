@@ -77,7 +77,7 @@ You can create dropzone using `ng-dropzone` attribute or `<ng-dropzone></ng-drop
 ```
 <ng-dropzone class="dropzone" options="dzOptions" callbacks="dzCallbacks" methods="dzMethods"></ng-dropzone>
 ```
-> **options** attribute specifies model that will set [options (click to see)](http://www.dropzonejs.com/#configuration-options) for dropzone and will override any options that may have been provided with **dropzoneOps** provider. For example, `$scope.dropzoneOps = {bla:bleh,...};`
+> **options** attribute specifies model that will set [options (click to see)](http://www.dropzonejs.com/#configuration-options) for dropzone and will override any options that may have been provided with **dropzoneOps** provider. For example, `$scope.dzOptions = {bla:bleh,...};`
 
 > **callbacks** attribute specifies model that will handle [events (click to see)](http://www.dropzonejs.com/#events) for dropzone. For example, `$scope.dzCallbacks.addedfile = function(file){//do something};`
 

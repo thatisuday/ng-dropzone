@@ -148,3 +148,9 @@ use **[ng-buffer-dropzone](https://github.com/thatisuday/ng-buffer-dropzone)** f
 1. Feel free to create as many issues as you want to report bugs.
 2. Take a fork and create pull request for bug fixes and enhancements.
 3. Please raise an issue if `dropzone.js` have new updates.
+
+***
+
+## Updates
+1. Version 2.0.0 out
+2. Wiki on how to mock files from server into dropzone : [link here](https://github.com/thatisuday/ng-dropzone/wiki/Mock-files-(already-uploaded)-from-server-into-dropzone)

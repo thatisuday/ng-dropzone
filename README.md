@@ -153,4 +153,4 @@ use **[ng-buffer-dropzone](https://github.com/thatisuday/ng-buffer-dropzone)** f
 
 ## Updates
 1. Version 2.0.0 out
-2. Wiki on how to mock files from server into dropzone : [link here](https://github.com/thatisuday/ng-dropzone/wiki/Mock-files-(already-uploaded)-from-server-into-dropzone)
+2. Lesson on how to mock files from server into your dropzone : [Wiki here](https://github.com/thatisuday/ng-dropzone/wiki/Mock-files-(already-uploaded)-from-server-into-dropzone) [Preview here](https://rawgit.com/thatisuday/ng-dropzone/master/demo/server-mock.html)

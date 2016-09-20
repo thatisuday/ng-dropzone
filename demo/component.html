@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html ng-app="myNgApp">
+	<head>
+		<meta charset="utf-8">
+		<title>ng-dropzone | angular component 1.5</title>
+		
+		<!-- AngularJS -->
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+		
+		<!-- Dropzone -->
+		<script src="https://rawgit.com/enyo/dropzone/d8ef7a82e6ab5447c1f2d9512c8e1bfd4de5ac9e/dist/dropzone.js"></script>
+		<link rel="stylesheet" href="https://rawgit.com/enyo/dropzone/d8ef7a82e6ab5447c1f2d9512c8e1bfd4de5ac9e/dist/dropzone.css">
+		
+		<!-- ng-dropzone -->
+		<script src="../dist/ng-dropzone.min.js"></script>
+		
+		<!-- Misc -->
+		<link rel="stylesheet" href="../dist/ng-dropzone.min.css">
+		<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
+		
+		<style>
+			body{
+				font-family:'Roboto', sans-serif !important;
+			}
+			.dropzone{
+				width:700px;
+				min-height:250px;
+				margin: 10px auto;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<my-comp>
+			<!-- <div class="dropzone" options="dzOptions" callbacks="dzCallbacks" methods="dzMethods" ng-dropzone></div> -->
+		</my-comp>
+		
+		
+		<!-- ####################################################### -->
+		<!-- #####################  JAVASCRIPT  #################### -->
+		<!-- ####################################################### -->
+		<script>
+			Dropzone.autoDiscover = false;
+			var myNgApp = angular.module('myNgApp', ['thatisuday.dropzone']);
+			
+			// create your component
+			myNgApp.component('myComp', {
+				template : '<ng-dropzone class="dropzone" options="$ctrl.dzOptions" callbacks="$ctrl.dzCallbacks" methods="$ctrl.dzMethods"></ng-dropzone>',
+				controller : function(){
+					var vm = this;
+
+					// children yet not link
+					vm.$onInit = function(){
+						vm.dzOptions = {
+							url : '/upload',
+							acceptedFiles : 'image/jpeg, images/jpg, image/png',
+							addRemoveLinks : true,
+							dictDefaultMessage : 'Click to add or drop photos (10 max)',
+							dictRemoveFile : 'Remove photo',
+							dictResponseError : 'Could not upload this photo',
+							paramName : 'photo',
+							maxFilesize : '10',
+							maxFiles : '10'
+						};
+
+						vm.dzCallbacks = {};
+						vm.dzMethods = {};
+					};
+
+					// children are linked
+					vm.$postLink = function(){
+						var dz = vm.dzMethods.getDropzone();
+						console.log(dz);
+					}
+				}
+			});
+		</script>
+	</body>
+</html>
+

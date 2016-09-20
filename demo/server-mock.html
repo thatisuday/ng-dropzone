@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html ng-app="myNgApp">
+	<head>
+		<meta charset="utf-8">
+		<title>ng-dropzone | preview files on server</title>
+		
+		<!-- AngularJS -->
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+		
+		<!-- Dropzone -->
+		<script src="https://rawgit.com/enyo/dropzone/d8ef7a82e6ab5447c1f2d9512c8e1bfd4de5ac9e/dist/dropzone.js"></script>
+		<link rel="stylesheet" href="https://rawgit.com/enyo/dropzone/d8ef7a82e6ab5447c1f2d9512c8e1bfd4de5ac9e/dist/dropzone.css">
+		
+		<!-- ng-dropzone -->
+		<script src="../dist/ng-dropzone.min.js"></script>
+		
+		<!-- Misc -->
+		<link rel="stylesheet" href="../dist/ng-dropzone.min.css">
+		<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
+		
+		<style>
+			body{
+				font-family:'Roboto', sans-serif !important;
+			}
+			.dropzone{
+				width:700px;
+				min-height:250px;
+				margin: 10px auto;
+			}
+			#dropzone3{
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div ng-controller="dropController">
+			<div class="dropzone" options="dzOptions" callbacks="dzCallbacks" methods="dzMethods" ng-dropzone></div>
+		</div>
+		
+		
+		<!-- ####################################################### -->
+		<!-- #####################  JAVASCRIPT  #################### -->
+		<!-- ####################################################### -->
+		<script>
+			Dropzone.autoDiscover = false;
+			var myNgApp = angular.module('myNgApp', ['thatisuday.dropzone']);
+			
+			// Global dropzone config (optional)
+			myNgApp.config(function(dropzoneOpsProvider){
+				dropzoneOpsProvider.setOptions({
+					url : '/upload',
+					acceptedFiles : 'image/jpeg, images/jpg, image/png',
+					addRemoveLinks : true,
+					dictDefaultMessage : 'Click to add or drop photos (10 max)',
+					dictRemoveFile : 'Remove photo',
+					dictResponseError : 'Could not upload this photo'
+				});
+			});
+			
+			// Controller
+			myNgApp.controller('dropController', function($scope, $timeout){
+				
+				// dropzone instance options
+				$scope.dzOptions = {
+					paramName : 'photo',
+					maxFilesize : '10',
+					maxFiles : '10'
+				};
+				
+
+				// files to mock
+				// file name can be random string
+				// set size to a number lower that maxFilesize
+				// set isMock to true, as this will help us identify if any added file is mock file
+				var demoThumbUrl = "http://i.imgur.com/BwTuOlQ.jpg";
+				$scope.mockFiles = [
+					{name:'mock_file_1', size : 5000, isMock : true, serverImgUrl : demoThumbUrl},
+					{name:'mock_file_2', size : 5000, isMock : true, serverImgUrl : demoThumbUrl},
+					{name:'mock_file_2', size : 5000, isMock : true, serverImgUrl : demoThumbUrl}
+				];
+
+
+				// setting methods transport object
+				// wrap methods in $timeout to call methods after current digest cycle
+				$scope.myDz = null;
+				$scope.dzMethods = {};
+			    $timeout(function(){
+			    	
+			    	// get dropzone instance to emit some events
+			    	$scope.myDz = $scope.dzMethods.getDropzone();
+
+			    	// emit `addedfile` event with mock files
+			    	// emit `complete` event for mockfile as they are already uploaded
+			    	// decrease `maxFiles` count by one as we keep adding mock file
+			    	// push mock file dropzone
+			    	$scope.mockFiles.forEach(function(mockFile){
+			    		$scope.myDz.emit('addedfile', mockFile);
+			    		$scope.myDz.emit('complete', mockFile);
+			    		$scope.myDz.options.maxFiles = $scope.myDz.options.maxFiles - 1;
+			    		$scope.myDz.files.push(mockFile);
+			    	});
+
+			    });
+
+
+			    // setting callbacks
+				$scope.dzCallbacks = {
+					'addedfile' : function(file){
+						// If added file is a mock file
+						// create thumbnail from url provided by server in mock file array
+						if(file.isMock){
+							$scope.myDz.createThumbnailFromUrl(file, file.serverImgUrl, null, true);
+						}
+					}
+				};
+			});
+		</script>
+	</body>
+</html>
+

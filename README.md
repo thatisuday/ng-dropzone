@@ -134,6 +134,8 @@ By default, dropzone starts file upload when file is dropped or added to the lis
 
 > I have added two more extra methods `getDropzone` and `getAllFiles` which returns **dropzone instance** and **dropzone files** respectively. These methods do not accept any _arguments_ and only work with _ng-dropzone_.
 
+> If `$scope.dzMethods.method` throws _undefined_ error, wrap it in `$timeout(function(){...})`. This happens because you are referencing an object that is empty as dropzone is not yet property linked with the controller scope.
+
 ***
 
 ## 6. Buffer paste

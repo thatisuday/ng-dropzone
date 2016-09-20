@@ -1,7 +1,7 @@
 
 ![](https://camo.githubusercontent.com/0ac4844780d7e981e44a9ca97887476f50a0b840/687474703a2f2f7777772e64726f707a6f6e656a732e636f6d2f696d616765732f6e65772d6c6f676f2e737667)
 
-# ng-dropzone  ![bower](https://img.shields.io/bower/v/ngdropzone.svg?style=flat-square) [![npm downloads](https://img.shields.io/npm/dt/ngdropzone.svg?style=flat-square)](https://www.npmjs.com/package/ngdropzone) [![preview](https://img.shields.io/badge/preview-click here-green.svg?style=flat-square)](https://rawgit.com/thatisuday/ng-dropzone/master/test/test.html)
+# ng-dropzone  ![bower](https://img.shields.io/bower/v/ngdropzone.svg?style=flat-square) [![npm downloads](https://img.shields.io/npm/dt/ngdropzone.svg?style=flat-square)](https://www.npmjs.com/package/ngdropzone) [![preview](https://img.shields.io/badge/preview-click here-green.svg?style=flat-square)](https://rawgit.com/thatisuday/ng-dropzone/master/demo/main.html)
 
 AngularJS directive for __[dropzone](https://github.com/enyo/dropzone)__
 
@@ -131,7 +131,7 @@ myNgApp.controller('main', function($scope){
 
 By default, dropzone starts file upload when file is dropped or added to the list. But this can be prevented using `autoProcessQueue:false` in options. Then you have to manually start file upload using **_dzMethods_** model. You just have to call function `dzMethods.processQueue();` to start upload.
 
-> For better understanding, **__⚑__**  checkout source code in /test/test.html file or visit second example in  [preview](https://rawgit.com/thatisuday/ng-dropzone/master/test/test.html) of this directive.
+> For better understanding, **__⚑__**  checkout source code in /test/test.html file or visit second example in  [preview](https://rawgit.com/thatisuday/ng-dropzone/master/demo/main.html) of this directive.
 
 > I have added two more extra methods `getDropzone` and `getAllFiles` which returns **dropzone instance** and **dropzone files** respectively. These methods do not accept any _arguments_ and only work with _ng-dropzone_.
 

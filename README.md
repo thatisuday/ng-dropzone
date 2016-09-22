@@ -12,6 +12,11 @@ In latest release **v1.0.5**, distribution files have been renamed to match newl
 
 ## 1. Getting started
 
+### → Install using npm
+```
+npm install ngdropzone
+```
+
 ### → Install using bower
 Run following command in your working directory using shell/cmd
 ```
@@ -154,3 +159,7 @@ use **[ng-buffer-dropzone](https://github.com/thatisuday/ng-buffer-dropzone)** f
 ## Updates
 1. Version 2.0.0 out
 2. Lesson on how to mock files from server into your dropzone : [Wiki here](https://github.com/thatisuday/ng-dropzone/wiki/Mock-files-(already-uploaded)-from-server-into-dropzone) [Preview here](https://rawgit.com/thatisuday/ng-dropzone/master/demo/server-mock.html)
+
+***
+
+### Liked it? Give it a star 🌟. I would love it :)

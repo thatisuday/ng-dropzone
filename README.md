@@ -1,7 +1,7 @@
 
 ![](https://camo.githubusercontent.com/0ac4844780d7e981e44a9ca97887476f50a0b840/687474703a2f2f7777772e64726f707a6f6e656a732e636f6d2f696d616765732f6e65772d6c6f676f2e737667)
 
-# ng-dropzone  ![bower](https://img.shields.io/bower/v/ngdropzone.svg?style=flat-square) [![npm downloads](https://img.shields.io/npm/dt/ngdropzone.svg?style=flat-square)](https://www.npmjs.com/package/ngdropzone) [![preview](https://img.shields.io/badge/preview-click here-green.svg?style=flat-square)](https://rawgit.com/thatisuday/ng-dropzone/master/demo/main.html)
+# ng-dropzone  ![bower](https://img.shields.io/bower/v/ngdropzone.svg?style=flat-square) [![npm downloads](https://img.shields.io/npm/dt/ngdropzone.svg?style=flat-square)](https://www.npmjs.com/package/ngdropzone) [![preview](https://img.shields.io/badge/preview-click_here-green.svg?style=flat-square)](https://rawgit.com/thatisuday/ng-dropzone/master/demo/main.html)
 
 AngularJS directive for __[dropzone](https://github.com/enyo/dropzone)__
 

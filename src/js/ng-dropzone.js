@@ -28,8 +28,9 @@
     }).directive('ngDropzone', ['$timeout', 'dropzoneOps', function($timeout, dropzoneOps){
       return {
         restrict : 'AE',
-        template : '<div></div>',
+        template : '<div ng-transclude></div>',
         replace : true,
+        transclude: true,
         scope : {
           options : '=?', //http://www.dropzonejs.com/#configuration-options
           callbacks : '=?', //http://www.dropzonejs.com/#events

@@ -1,5 +1,5 @@
-# need maintainers
-This project is no longer maintained. Though this project is in good health, we would appreciate if someone collaborate to fix potential bugs and enhancement requests.
+# Need maintainers
+This project is no longer maintained. Though this project is in good health, we would appreciate if someone collaborates to fix potential bugs and enhancement requests.
 
 ***
 

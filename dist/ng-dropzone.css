@@ -54,7 +54,7 @@
       margin-right: 5%; }
       .dropzone .dz-preview .dz-progress .dz-upload {
         background: #8BC34A;
-        background: -webkit-linear-gradient(top, #E6EE9C, #8BC34A);
+        background: -webkit-gradient(linear, left top, left bottom, from(#E6EE9C), to(#8BC34A));
         background: linear-gradient(to bottom, #E6EE9C, #8BC34A); }
     .dropzone .dz-preview .dz-success-mark, .dropzone .dz-preview .dz-error-mark {
       margin: 0;
@@ -76,7 +76,7 @@
       line-height: 14px;
       border-radius: 3px;
       background: #FF9800;
-      background: -webkit-linear-gradient(top, #FFA726, #FF9800);
+      background: -webkit-gradient(linear, left top, left bottom, from(#FFA726), to(#FF9800));
       background: linear-gradient(to bottom, #FFA726, #FF9800);
       text-align: center;
       margin-top: 10px;

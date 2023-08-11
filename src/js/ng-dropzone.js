@@ -3,12 +3,14 @@
  * @author Uday Hiwarale <uhiwarale@gmail.com>
  * https://www.github.com/thatisuday/ngDropzone
  */
- 
- 
+
+
 (function(root){
     'use strict';
   function factory(angular, Dropzone){
-      
+    // Handle both `Dropzone.default` and `Dropzone.Dropzone` depending on how it's being exported
+    Dropzone = Dropzone.default || Dropzone.Dropzone || Dropzone;
+
     angular.module('thatisuday.dropzone', []).provider('dropzoneOps', function(){
       /*
        *  Add default options here
@@ -16,7 +18,7 @@
       var defOps = {
         //Add your options here
       };
-      
+
       return {
         setOptions : function(newOps){
           angular.extend(defOps, newOps);
@@ -40,43 +42,43 @@
           //Set options for dropzone {override from dropzone options provider}
           scope.options = scope.options || {};
           var initOps = angular.extend({}, dropzoneOps, scope.options);
-          
-          
+
+
           //Instantiate dropzone with initOps
           var dropzone = new Dropzone(iElem[0], initOps);
-          
-          
+
+
           /*********************************************/
-          
-          
+
+
           //Instantiate Dropzone methods (Control actions)
           scope.methods = scope.methods || {};
-          
-          scope.methods.getDropzone = function(){ 
+
+          scope.methods.getDropzone = function(){
             return dropzone; //Return dropzone instance
           };
-          
-          scope.methods.getAllFiles = function(){ 
+
+          scope.methods.getAllFiles = function(){
             return dropzone.files; //Return all files
           };
-          
+
           var controlMethods = [
             'removeFile', 'removeAllFiles', 'processQueue',
             'getAcceptedFiles', 'getRejectedFiles', 'getQueuedFiles', 'getUploadingFiles',
             'disable', 'enable', 'confirm', 'createThumbnailFromUrl'
           ];
-          
+
           angular.forEach(controlMethods, function(methodName){
             scope.methods[methodName] = function(){
               dropzone[methodName].apply(dropzone, arguments);
               if(!scope.$$phase && !scope.$root.$$phase) scope.$apply();
             }
           });
-          
-          
+
+
           /*********************************************/
-          
-          
+
+
           //Set invents (callbacks)
           if(scope.callbacks){
             var callbackMethods = [
@@ -99,8 +101,8 @@
       }
     }]);
   }
-  
-  
+
+
 
   if ((typeof module === 'object') && module.exports) {
     /* CommonJS module */
